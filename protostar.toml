@@ -1,0 +1,18 @@
+["protostar.config"]
+protostar_version = "0.3.2"
+
+["protostar.project"]
+libs_path = "lib"
+
+["protostar.contracts"]
+fibonacci = [
+    "src/fibonacci.cairo",
+]
+
+revoked_reference = [
+    "src/revoked_reference.cairo"
+]
+
+hints = [
+    "src/hints.cairo"
+]
