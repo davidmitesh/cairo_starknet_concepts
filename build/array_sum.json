@@ -10,32 +10,103 @@
         "builtins": [
             "range_check"
         ],
-        "data": [],
+        "data": [
+            "0x400380007ffc7ffd",
+            "0x482680017ffc8000",
+            "0x1",
+            "0x208b7fff7fff7ffe",
+            "0x480a7ffb7fff8000",
+            "0x48297ffc80007ffd",
+            "0x1104800180018000",
+            "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffffb",
+            "0x208b7fff7fff7ffe",
+            "0x482680017ffb8000",
+            "0x2",
+            "0x480280007ffb8000",
+            "0x482680017ffd8000",
+            "0x800000000000011000000000000000000000000000000000000000000000000",
+            "0x1104800180018000",
+            "0x800000000000010fffffffffffffffffffffffffffffffffffffffffffffff7",
+            "0x480280017ffb8000",
+            "0x48487ffd7fff8000",
+            "0x480280007ffb8000",
+            "0x40317fff7ffe7ffc",
+            "0x48127ffc7fff8000",
+            "0x480280017ffb8000",
+            "0x480280007ffb8000",
+            "0x208b7fff7fff7ffe"
+        ],
         "debug_info": null,
-        "hints": {},
+        "hints": {
+            "0": [
+                {
+                    "accessible_scopes": [
+                        "starkware.cairo.common.math",
+                        "starkware.cairo.common.math.assert_nn"
+                    ],
+                    "code": "from starkware.cairo.common.math_utils import assert_integer\nassert_integer(ids.a)\nassert 0 <= ids.a % PRIME < range_check_builtin.bound, f'a = {ids.a} is out of range.'",
+                    "flow_tracking_data": {
+                        "ap_tracking": {
+                            "group": 0,
+                            "offset": 0
+                        },
+                        "reference_ids": {
+                            "starkware.cairo.common.math.assert_nn.a": 0,
+                            "starkware.cairo.common.math.assert_nn.range_check_ptr": 1
+                        }
+                    }
+                }
+            ],
+            "9": [
+                {
+                    "accessible_scopes": [
+                        "starkware.cairo.common.math",
+                        "starkware.cairo.common.math.unsigned_div_rem"
+                    ],
+                    "code": "from starkware.cairo.common.math_utils import assert_integer\nassert_integer(ids.div)\nassert 0 < ids.div <= PRIME // range_check_builtin.bound, \\\n    f'div={hex(ids.div)} is out of the valid range.'\nids.q, ids.r = divmod(ids.value, ids.div)",
+                    "flow_tracking_data": {
+                        "ap_tracking": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "reference_ids": {
+                            "starkware.cairo.common.math.unsigned_div_rem.div": 8,
+                            "starkware.cairo.common.math.unsigned_div_rem.q": 11,
+                            "starkware.cairo.common.math.unsigned_div_rem.r": 10,
+                            "starkware.cairo.common.math.unsigned_div_rem.range_check_ptr": 12,
+                            "starkware.cairo.common.math.unsigned_div_rem.value": 7
+                        }
+                    }
+                }
+            ]
+        },
         "identifiers": {
-            "__main__.ArraySum": {
+            "__main__.ArrayFelt": {
                 "type": "namespace"
             },
-            "__main__.ArraySum.Args": {
-                "full_name": "__main__.ArraySum.Args",
+            "__main__.ArrayFelt.Args": {
+                "full_name": "__main__.ArrayFelt.Args",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ArraySum.ImplicitArgs": {
-                "full_name": "__main__.ArraySum.ImplicitArgs",
+            "__main__.ArrayFelt.ImplicitArgs": {
+                "full_name": "__main__.ArrayFelt.ImplicitArgs",
                 "members": {},
                 "size": 0,
                 "type": "struct"
             },
-            "__main__.ArraySum.Return": {
+            "__main__.ArrayFelt.Return": {
                 "cairo_type": "()",
                 "type": "type_definition"
             },
-            "__main__.ArraySum.SIZEOF_LOCALS": {
+            "__main__.ArrayFelt.SIZEOF_LOCALS": {
                 "type": "const",
                 "value": 0
+            },
+            "__main__.unsigned_div_rem": {
+                "destination": "starkware.cairo.common.math.unsigned_div_rem",
+                "type": "alias"
             },
             "starkware.cairo.common.cairo_builtins.BitwiseBuiltin": {
                 "full_name": "starkware.cairo.common.cairo_builtins.BitwiseBuiltin",
@@ -162,6 +233,346 @@
             "starkware.cairo.common.hash.HashBuiltin": {
                 "destination": "starkware.cairo.common.cairo_builtins.HashBuiltin",
                 "type": "alias"
+            },
+            "starkware.cairo.common.math.assert_le": {
+                "decorators": [],
+                "pc": 4,
+                "type": "function"
+            },
+            "starkware.cairo.common.math.assert_le.Args": {
+                "full_name": "starkware.cairo.common.math.assert_le.Args",
+                "members": {
+                    "a": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    },
+                    "b": {
+                        "cairo_type": "felt",
+                        "offset": 1
+                    }
+                },
+                "size": 2,
+                "type": "struct"
+            },
+            "starkware.cairo.common.math.assert_le.ImplicitArgs": {
+                "full_name": "starkware.cairo.common.math.assert_le.ImplicitArgs",
+                "members": {
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 1,
+                "type": "struct"
+            },
+            "starkware.cairo.common.math.assert_le.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "starkware.cairo.common.math.assert_le.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "starkware.cairo.common.math.assert_le.a": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.assert_le.a",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 1,
+                            "offset": 0
+                        },
+                        "pc": 4,
+                        "value": "[cast(fp + (-4), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.assert_le.b": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.assert_le.b",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 1,
+                            "offset": 0
+                        },
+                        "pc": 4,
+                        "value": "[cast(fp + (-3), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.assert_le.range_check_ptr": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.assert_le.range_check_ptr",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 1,
+                            "offset": 0
+                        },
+                        "pc": 4,
+                        "value": "[cast(fp + (-5), felt*)]"
+                    },
+                    {
+                        "ap_tracking_data": {
+                            "group": 1,
+                            "offset": 5
+                        },
+                        "pc": 8,
+                        "value": "[cast(ap + (-1), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.assert_nn": {
+                "decorators": [],
+                "pc": 0,
+                "type": "function"
+            },
+            "starkware.cairo.common.math.assert_nn.Args": {
+                "full_name": "starkware.cairo.common.math.assert_nn.Args",
+                "members": {
+                    "a": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 1,
+                "type": "struct"
+            },
+            "starkware.cairo.common.math.assert_nn.ImplicitArgs": {
+                "full_name": "starkware.cairo.common.math.assert_nn.ImplicitArgs",
+                "members": {
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 1,
+                "type": "struct"
+            },
+            "starkware.cairo.common.math.assert_nn.Return": {
+                "cairo_type": "()",
+                "type": "type_definition"
+            },
+            "starkware.cairo.common.math.assert_nn.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "starkware.cairo.common.math.assert_nn.a": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.assert_nn.a",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 0,
+                            "offset": 0
+                        },
+                        "pc": 0,
+                        "value": "[cast(fp + (-3), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.assert_nn.range_check_ptr": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.assert_nn.range_check_ptr",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 0,
+                            "offset": 0
+                        },
+                        "pc": 0,
+                        "value": "[cast(fp + (-4), felt*)]"
+                    },
+                    {
+                        "ap_tracking_data": {
+                            "group": 0,
+                            "offset": 0
+                        },
+                        "pc": 1,
+                        "value": "cast([fp + (-4)] + 1, felt)"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem": {
+                "decorators": [],
+                "pc": 9,
+                "type": "function"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.Args": {
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.Args",
+                "members": {
+                    "div": {
+                        "cairo_type": "felt",
+                        "offset": 1
+                    },
+                    "value": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 2,
+                "type": "struct"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.ImplicitArgs": {
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.ImplicitArgs",
+                "members": {
+                    "range_check_ptr": {
+                        "cairo_type": "felt",
+                        "offset": 0
+                    }
+                },
+                "size": 1,
+                "type": "struct"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.Return": {
+                "cairo_type": "(q : felt, r : felt)",
+                "type": "type_definition"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.SIZEOF_LOCALS": {
+                "type": "const",
+                "value": 0
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.__temp0": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.__temp0",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 11
+                        },
+                        "pc": 17,
+                        "value": "[cast(ap + (-1), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.__temp1": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.__temp1",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 12
+                        },
+                        "pc": 18,
+                        "value": "[cast(ap + (-1), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.__temp2": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.__temp2",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 13
+                        },
+                        "pc": 19,
+                        "value": "[cast(ap + (-1), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.div": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.div",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "pc": 9,
+                        "value": "[cast(fp + (-3), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.q": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.q",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "pc": 9,
+                        "value": "[cast([fp + (-5)] + 1, felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.r": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.r",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "pc": 9,
+                        "value": "[cast([fp + (-5)], felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.range_check_ptr": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.range_check_ptr",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "pc": 9,
+                        "value": "[cast(fp + (-5), felt*)]"
+                    },
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "pc": 9,
+                        "value": "cast([fp + (-5)] + 2, felt)"
+                    },
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 10
+                        },
+                        "pc": 16,
+                        "value": "[cast(ap + (-1), felt*)]"
+                    }
+                ],
+                "type": "reference"
+            },
+            "starkware.cairo.common.math.unsigned_div_rem.value": {
+                "cairo_type": "felt",
+                "full_name": "starkware.cairo.common.math.unsigned_div_rem.value",
+                "references": [
+                    {
+                        "ap_tracking_data": {
+                            "group": 2,
+                            "offset": 0
+                        },
+                        "pc": 9,
+                        "value": "[cast(fp + (-4), felt*)]"
+                    }
+                ],
+                "type": "reference"
             },
             "starkware.starknet.common.storage.ADDR_BOUND": {
                 "type": "const",
@@ -823,7 +1234,144 @@
         "main_scope": "__main__",
         "prime": "0x800000000000011000000000000000000000000000000000000000000000001",
         "reference_manager": {
-            "references": []
+            "references": [
+                {
+                    "ap_tracking_data": {
+                        "group": 0,
+                        "offset": 0
+                    },
+                    "pc": 0,
+                    "value": "[cast(fp + (-3), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 0,
+                        "offset": 0
+                    },
+                    "pc": 0,
+                    "value": "[cast(fp + (-4), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 0,
+                        "offset": 0
+                    },
+                    "pc": 1,
+                    "value": "cast([fp + (-4)] + 1, felt)"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 1,
+                        "offset": 0
+                    },
+                    "pc": 4,
+                    "value": "[cast(fp + (-4), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 1,
+                        "offset": 0
+                    },
+                    "pc": 4,
+                    "value": "[cast(fp + (-3), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 1,
+                        "offset": 0
+                    },
+                    "pc": 4,
+                    "value": "[cast(fp + (-5), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 1,
+                        "offset": 5
+                    },
+                    "pc": 8,
+                    "value": "[cast(ap + (-1), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 0
+                    },
+                    "pc": 9,
+                    "value": "[cast(fp + (-4), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 0
+                    },
+                    "pc": 9,
+                    "value": "[cast(fp + (-3), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 0
+                    },
+                    "pc": 9,
+                    "value": "[cast(fp + (-5), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 0
+                    },
+                    "pc": 9,
+                    "value": "[cast([fp + (-5)], felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 0
+                    },
+                    "pc": 9,
+                    "value": "[cast([fp + (-5)] + 1, felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 0
+                    },
+                    "pc": 9,
+                    "value": "cast([fp + (-5)] + 2, felt)"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 10
+                    },
+                    "pc": 16,
+                    "value": "[cast(ap + (-1), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 11
+                    },
+                    "pc": 17,
+                    "value": "[cast(ap + (-1), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 12
+                    },
+                    "pc": 18,
+                    "value": "[cast(ap + (-1), felt*)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 2,
+                        "offset": 13
+                    },
+                    "pc": 19,
+                    "value": "[cast(ap + (-1), felt*)]"
+                }
+            ]
         }
     }
 }

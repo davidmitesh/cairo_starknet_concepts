@@ -20,7 +20,7 @@ const_and_references = [
     "src/const_and_references.cairo"
 ]
 array_sum = [
-    "src/array_sum.cairo"
+    "src/array_felt.cairo"
 ]
 field_element_felt = [
     "src/field_element_felt.cairo"
