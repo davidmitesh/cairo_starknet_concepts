@@ -1,6 +1,11 @@
 # References - It may be difficult to follow the progress of the ap register. So, to create a reference to that, we may use 'let' keyword in cairo
-
+# References using let - It is defined uisng the let statement
 # For example:
+# let x = y * y * y
+# You should think of x as an alias to the expression y * y * y,
+# which means that the instruction let x = y * y * y by itself will not cause
+# any computation to be performed. On the other hand, a later instruction
+# such as assert x * x = 1 will turn into assert (y * y * y) * (y * y * y) = 1.
 
 namespace References:
     func without_reference() -> (res : felt):

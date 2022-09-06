@@ -25,3 +25,6 @@ array_sum = [
 field_element_felt = [
     "src/field_element_felt.cairo"
 ]
+puzzle = [
+    "src/puzzle.cairo"
+]
